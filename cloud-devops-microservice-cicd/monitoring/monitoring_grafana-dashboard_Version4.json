@@ -1,0 +1,27 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Microservice: ECS Metrics",
+    "tags": ["ECS", "Microservice", "Prometheus"],
+    "panels": [
+      {
+        "type": "graph",
+        "title": "CPU Utilization",
+        "datasource": "Prometheus",
+        "targets": [ { "expr": "avg(rate(container_cpu_usage_seconds_total{job=\"microservice\"}[5m]))", "legendFormat": "CPU %" } ]
+      },
+      {
+        "type": "graph",
+        "title": "Memory Usage",
+        "datasource": "Prometheus",
+        "targets": [ { "expr": "avg(container_memory_usage_bytes{job=\"microservice\"})", "legendFormat": "Memory MB" } ]
+      },
+      {
+        "type": "graph",
+        "title": "HTTP Requests",
+        "datasource": "Prometheus",
+        "targets": [ { "expr": "sum(rate(http_requests_total{job=\"microservice\"}[1m])) by (method)", "legendFormat": "{{method}}" } ]
+      }
+    ]
+  }
+}

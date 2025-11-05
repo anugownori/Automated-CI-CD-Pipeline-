@@ -1,0 +1,19 @@
+{
+  "name": "cloud-devops-microservice",
+  "version": "1.0.0",
+  "description": "Node.js Express microservice with Prometheus metrics endpoint.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "prom-client": "^14.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "supertest": "^6.3.3"
+  },
+  "license": "MIT"
+}

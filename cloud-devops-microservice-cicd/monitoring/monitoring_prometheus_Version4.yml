@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 30s
+
+scrape_configs:
+  - job_name: 'microservice'
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+        # Replace below with your ALB DNS name and port after first Terraform deploy
+        - 'your-alb-dns-name:80'
